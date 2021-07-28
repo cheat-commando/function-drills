@@ -38,7 +38,11 @@ printName("Carston")
 */
 
 //CODE HERE
+function greeting(name) {
+  console.log(`Hello, ${name}.`);
+}
 
+greeting("Fillmore");
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -48,7 +52,12 @@ printName("Carston")
 */
 
 //CODE HERE
+function add(a,b) {
+  return a + b
+}
 
+let sum = add(3,4)
+console.log(sum)
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
@@ -60,7 +69,18 @@ printName("Carston")
 */
 
 //CODE HERE
+function nameCheck(NAMEPARAM) {
+  if (NAMEPARAM === "Steven") {
+    return "What's is up Steven?"
+  } else if (NAMEPARAM === "Bryan") {
+    return "Hey Bryan!"
+  } else {
+    return `Cool name, ${NAMEPARAM}!`
+  }
+}
 
+let nameGreeting = nameCheck("Louis")
+console.log(nameGreeting)
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -73,7 +93,20 @@ printName("Carston")
 */
 
 //CODE HERE
+function faveColorFinder(color) {
+  if (color === "red") {
+    return "red is a great color"
+  } else if (color === "green") {
+    return "green is a solid favorite color"
+  } else if (color === "black") {
+    return "so trendy"
+  } else {
+    return "you need to evaluate your favorite color choice"
+  }
+}
 
+let colorRating = faveColorFinder("blue")
+console.log(colorRating)
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -84,7 +117,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(arr) {
+  for (person of arr) {
+    console.log(person)
+  }
+}
 
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 8 ////////////////////
 /*
@@ -95,7 +134,16 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(num) {
+  if (num % 2 === 0) {
+    return "That's not odd!"
+  } else {
+    return "That is odd indeed!"
+  }
+}
 
+let oddChecker = thatsOdd(5)
+console.log(oddChecker)
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -109,7 +157,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr) {
+  answers = []
+  for (item of arr) {
+    if (item > 100) {
+      answers.push("big")
+    } else {
+      answers.push("small")
+    }
+  }
+  return answers
+}
 
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -120,7 +181,18 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(arr, eliminate) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === eliminate) {
+      arr.splice(i,1);
+      break
+    }
+  }
+  return arr
+}
 
+theEliminator(contestants, loser);
+console.log(contestants)
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -129,7 +201,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function capitalize(str) {
+  console.log(str.toUpperCase())
+}
 
+capitalize(sampleString);
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
@@ -138,7 +214,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function getChocoFrogs(gold) {
+  return Math.floor(gold / 3)
+}
 
+let totalFrogs = getChocoFrogs(35)
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -147,6 +228,7 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+//OOPS, I ALREADY DID THAT ABOVE
 
 ////////////////// PROBLEM 14 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -155,7 +237,20 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+function checkAscending(arr) {
+  ascend = true
+  for (let i = 0; i < arr.length - 1; i++) {
+    primary = arr[i]
+    secondary = arr[i+1]
+    if (secondary < primary) {
+      ascend = false
+    }
+  }
+  return ascend
+}
 
+let arrayIsAscending = checkAscending(sampleArray)
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 15 ////////////////////
 
@@ -179,13 +274,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["rubberDuck", "duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["sailorDuck", "rubberDuck", "duck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["realDuck", "duck"]
